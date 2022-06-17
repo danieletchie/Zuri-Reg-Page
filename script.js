@@ -6,6 +6,9 @@ const addError = (tag) => {
     errorParagraph = tag.nextElementSibling
     tag.classList.add("invalid")
     errorParagraph.classList.remove("invisible")
+    if (tag.type ==  "email") {
+        tag.classList.add("email_error")
+    }
 }
 
 const removeError = (tag) => {
@@ -16,6 +19,7 @@ const removeError = (tag) => {
 
 const validateLength = tag => {
     if (tag.value.length < 1){
+        tag.placeholder = ""
         addError(tag)
     }
     else {
@@ -25,6 +29,7 @@ const validateLength = tag => {
 
 const validateEmail = tag => {
     if (!tag.value.includes("@")) {
+        tag.placeholder = "email@example/com"
         addError(tag)
     }
     else {

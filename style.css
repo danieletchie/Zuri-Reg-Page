@@ -89,6 +89,10 @@ h2 {
     margin-bottom: 10px;
 }
 
+.email_error::-webkit-input-placeholder {
+    color: hsl(0, 100%, 74%);
+}
+
 .invisible {
     display: none;
 }
